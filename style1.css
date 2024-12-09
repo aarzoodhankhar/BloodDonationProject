@@ -1,0 +1,161 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    /* background: linear-gradient(120deg, #ff7e5f, #feb47b); */
+    background-image: url('images/world-donor-day-abstract-wallpaper-600nw-2115749144.webp');
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-attachment: fixed; /* Keeps the image fixed during scrolling */
+    
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Container Styling */
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: #ebc7c7;
+    padding: 40px;
+    /* border-radius: 20px; */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styling */
+h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #ff4d4d;
+    text-shadow: 2px 2px 5px rgba(255, 77, 77, 0.2);
+}
+
+/* Section Titles */
+h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ff4d4d;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+    color: #555;
+}
+
+/* Input Fields Styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    background-color: #f9f9f9;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #ff4d4d;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.3);
+}
+
+/* Button Styling */
+input[type="submit"] {
+    background: linear-gradient(to right, #ff4d4d, #ff7e5f);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 25px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(255, 77, 77, 0.2);
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    box-shadow: 0 6px 20px rgba(255, 77, 77, 0.4);
+    transform: scale(1.05);
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* Divider Styling */
+hr {
+    border: 0;
+    border-top: 2px solid #f0f0f0;
+    margin: 30px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    input[type="submit"] {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+}

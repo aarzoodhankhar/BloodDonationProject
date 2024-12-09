@@ -1,0 +1,300 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar Styling */
+nav {
+    background-color: #c70505;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav .logo{
+    margin-left :2rem;
+}
+nav .logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* Main Container */
+.main-container {
+    padding: 50px;
+    text-align: center;
+}
+
+/* Welcome Section */
+.welcome-container {
+    background-image: url('images/Screenshot\ 2024-12-01\ 201554.png');
+    background-size: contain; /* Ensures the whole image fits within the container */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed during scrolling */
+    padding: 30px;
+    margin-bottom: 40px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* .welcome-container h1 {
+    color: black;
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+} */
+.welcome-container h1 {
+    color: black;
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+    overflow: hidden; /* Ensures the text is clipped until animation completes */
+    white-space: nowrap; /* Prevents text wrapping during the animation */
+    animation: typeEffect 3s steps(30, end) forwards;
+}
+
+/* Animation for letter-by-letter effect */
+@keyframes typeEffect {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+.welcome-container p {
+    color: black;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Boxes Container */
+.boxes-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.box {
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    color: black;
+}
+
+#donor {
+    background-color: #d9283c;
+}
+
+#accepter {
+    background-color: #d9283c;
+}
+
+#hospital {
+    background-color: #d9283c;
+}
+
+.box h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.box p {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.box a.cta-btn {
+    background-color: #fff;
+    color: #f39c12;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.community-container {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.community-container h2 {
+    font-size: 2rem;
+    color: #e63946;
+    margin-bottom: 15px;
+}
+
+.community-container p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.community-btn {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    background-color: #e63946;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.community-btn:hover {
+    background-color: #d62828;
+}
+
+
+.box a.cta-btn:hover {
+    background-color: #f39c12;
+    color: white;
+}
+
+/* Donation Types Section */
+.donation-types-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.donation-type {
+    background: #f9f9f9;
+    border: 2px solid #e1e1e1;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donation-type:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.donation-type h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ff5e57;
+}
+
+.donation-type p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+    margin: 10px 0;
+}
+
+.donation-type p strong {
+    color: #ff5e57;
+    font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+    .donation-type {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .donation-type {
+        width: 100%;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #c70505;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Additional Info Links */
+.additional-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.additional-info ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.additional-info ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.additional-info ul li a:hover {
+    color: #da1b1b;
+}

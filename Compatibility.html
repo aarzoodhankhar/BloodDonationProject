@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Compatibility Checker</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f0f8ff;
+        }
+
+        /* Container to center content */
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #d32f2f;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #000000;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        /* Form and select styling */
+        .form-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fafafa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        select, button {
+            width: 200px;
+            padding: 12px;
+            font-size: 1.1em;
+            margin: 10px;
+            border-radius: 8px;
+            border: 2px solid #d53946;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        select:hover, button:hover {
+            background-color: #d47272;
+            color: white;
+            border-color: #ff5722;
+        }
+
+        button {
+            cursor: pointer;
+            font-weight: bold;
+            background-color: #d32f2f;
+            color: white;
+        }
+
+        /* Result section */
+        .result {
+            margin-top: 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #28a745;
+            text-transform: uppercase;
+        }
+
+        /* Add animation to the result */
+        .result.success {
+            color: #28a745;
+        }
+
+        .result.error {
+            color: #dc3545;
+        }
+
+        .result {
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Blood Compatibility Checker</h2>
+        
+        <div class="form-container">
+            <label for="donor-blood">Select Donor's Blood Type:</label>
+            <select id="donor-blood">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+
+            <label for="acceptor-blood">Select Acceptor's Blood Type:</label>
+            <select id="acceptor-blood">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+
+            <button onclick="checkCompatibility()">Check Compatibility</button>
+
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        // Blood compatibility function with enhanced design
+        function checkCompatibility() {
+            const donorBlood = document.getElementById('donor-blood').value;
+            const acceptorBlood = document.getElementById('acceptor-blood').value;
+            let compatibility = '';
+            let resultClass = '';
+
+            // Blood compatibility logic
+            const compatibilityMap = {
+                'O-': ['O-', 'O+', 'A-', 'A+', 'B-', 'B+', 'AB-', 'AB+'],
+                'O+': ['O+', 'A+', 'B+', 'AB+'],
+                'A-': ['A-', 'A+', 'AB-', 'AB+'],
+                'A+': ['A+', 'AB+'],
+                'B-': ['B-', 'B+', 'AB-', 'AB+'],
+                'B+': ['B+', 'AB+'],
+                'AB-': ['AB-', 'AB+'],
+                'AB+': ['AB+']
+            };
+
+            if (compatibilityMap[donorBlood].includes(acceptorBlood)) {
+                compatibility = 'Compatible';
+                resultClass = 'success';
+            } else {
+                compatibility = 'Not Compatible';
+                resultClass = 'error';
+            }
+
+            // Display result with animation
+            const resultElement = document.getElementById('result');
+            resultElement.className = 'result ' + resultClass;
+            resultElement.innerText = `Compatibility: ${compatibility}`;
+            resultElement.style.opacity = 1;  // Ensure result is visible
+        }
+    </script>
+
+</body>
+</html>

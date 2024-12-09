@@ -1,0 +1,18 @@
+[
+    {
+        "hospital_name": "City Hospital",
+        "email": "cityhospital@example.com",
+        "phone": "1112223333",
+        "state": "Delhi",
+        "district": "Central Delhi",
+        "blood_types": ["A+", "O+", "B+"]
+    },
+    {
+        "hospital_name": "Green Valley Hospital",
+        "email": "greenvalley@example.com",
+        "phone": "4445556666",
+        "state": "Maharashtra",
+        "district": "Mumbai",
+        "blood_types": ["A-", "O-", "AB+"]
+    }
+]
